@@ -41,7 +41,6 @@ async function handleGetRecipeByRecibeID(req, res) {
 }
 
 // Update Single Recipe by it's RecipeID
-
 async function handleUpdateRecipeByRecipeID(req, res) {
   try {
     const recipeID = req.params.recipeID;
@@ -66,9 +65,30 @@ async function handleUpdateRecipeByRecipeID(req, res) {
   }
 }
 
+// Delete Single Recipe by it's RecipeID
+async function handleDeleteRecipeByRecipeID(req, res) {
+  try {
+    const recipeID = req.params.recipeID;
+    const deletedRecipe = await Recipe.findOneAndDelete({ recipeID });
+    if (deletedRecipe) {
+      res.json({
+        message: `Recipe Deleted for given RecipeID : ${recipeID}`,
+        deletedRecipe,
+      });
+    } else {
+      res.json({
+        message: `Recipe Not Found for given RecipeID : ${recipeID}`,
+      });
+    }
+  } catch (error) {
+    res.json({ error: error.message });
+  }
+}
+
 module.exports = {
   handleCreateRecipe,
   handleGetAllRecipes,
   handleGetRecipeByRecibeID,
   handleUpdateRecipeByRecipeID,
+  handleDeleteRecipeByRecipeID,
 };
