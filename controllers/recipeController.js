@@ -14,7 +14,11 @@ async function handleCreateRecipe(req, res) {
 async function handleGetAllRecipes(req, res) {
   try {
     const recipes = await Recipe.find();
-    res.json({ message: "Found All Recipes", recipes });
+    if (recipes.length !== 0) {
+      res.json({ message: "Found All Recipes", recipes });
+    } else {
+      res.json({ message: "No Recipes Found" });
+    }
   } catch (error) {
     res.json({ error: error.message });
   }
