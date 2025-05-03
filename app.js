@@ -1,17 +1,8 @@
 const express = require("express");
 const app = express();
-const port = 8000;
-
-// Configurations
-
-// Middlewares
+const homeRoutes = require("./routers/homeRoutes");
 
 // Routes
+app.use("/", homeRoutes);
 
-// Server
-
-app.listen(port, () => {
-  console.log(
-    `App Started at Port:${port} and the URL is : http://localhost:${port}`
-  );
-});
+module.exports = app;
