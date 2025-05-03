@@ -1,5 +1,6 @@
 const express = require("express");
 
+// Importing Handler Functions From Controller
 const {
   handleCreateRecipe,
   handleGetAllRecipes,
@@ -10,6 +11,7 @@ const {
 
 const router = express.Router();
 
+// Routers & Handller Functions
 router.post("/", handleCreateRecipe);
 router.get("/", handleGetAllRecipes);
 router.get("/:recipeID", handleGetRecipeByRecibeID);
