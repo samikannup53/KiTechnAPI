@@ -10,4 +10,14 @@ async function handleCreateRecipe(req, res) {
   }
 }
 
-module.exports = { handleCreateRecipe };
+// Get All Recipes
+async function handleGetAllRecipes(req, res) {
+  try {
+    const recipes = await Recipe.find();
+    res.json({ recipes });
+  } catch (error) {
+    res.json({ error: error.message });
+  }
+}
+
+module.exports = { handleCreateRecipe, handleGetAllRecipes };

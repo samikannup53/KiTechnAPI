@@ -13,6 +13,6 @@ app.use(jsonParser);
 
 // Registr Routers
 app.use("/", homeRoutes);
-app.use("/recipe", recipeRoutes);
+app.use("/recipes", recipeRoutes);
 
 module.exports = app;
