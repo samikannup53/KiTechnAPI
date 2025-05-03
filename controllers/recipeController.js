@@ -14,10 +14,61 @@ async function handleCreateRecipe(req, res) {
 async function handleGetAllRecipes(req, res) {
   try {
     const recipes = await Recipe.find();
-    res.json({ recipes });
+    res.json({ message: "Found All Recipes", recipes });
   } catch (error) {
     res.json({ error: error.message });
   }
 }
 
-module.exports = { handleCreateRecipe, handleGetAllRecipes };
+// Get Single Recipe by it's RecipeID
+async function handleGetRecipeByRecibeID(req, res) {
+  try {
+    const recipeID = req.params.recipeID;
+    const recipe = await Recipe.findOne({ recipeID });
+    if (recipe) {
+      res.json({
+        message: `Recipe Found for given RecipeID : ${recipeID}`,
+        recipe,
+      });
+    } else {
+      res.json({
+        message: `Recipe Not Found for given RecipeID : ${recipeID}`,
+      });
+    }
+  } catch (error) {
+    res.json({ error: error.message });
+  }
+}
+
+// Update Single Recipe by it's RecipeID
+
+async function handleUpdateRecipeByRecipeID(req, res) {
+  try {
+    const recipeID = req.params.recipeID;
+    const updatedData = req.body;
+    const updatedRecipe = await Recipe.findOneAndUpdate(
+      { recipeID },
+      updatedData,
+      { runValidators: true, new: true }
+    );
+    if (updatedRecipe) {
+      res.json({
+        message: `Recipe details Updated for given RecipeID : ${recipeID}`,
+        updatedRecipe,
+      });
+    } else {
+      res.json({
+        message: `Recipe Not Found for given RecipeID : ${recipeID}`,
+      });
+    }
+  } catch (error) {
+    res.json({ error: error.message });
+  }
+}
+
+module.exports = {
+  handleCreateRecipe,
+  handleGetAllRecipes,
+  handleGetRecipeByRecibeID,
+  handleUpdateRecipeByRecipeID,
+};
