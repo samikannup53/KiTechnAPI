@@ -1,0 +1,153 @@
+# 📦 KiTechnAPI
+### ✨ A Simple and Clean ⚙️ C-R-U-D 📝 Application
+
+KiTechnAPI is a simple and clean CRUD application designed to manage recipes efficiently. 
+Built with Node.js, Express, and Mongoose (MongoDB) and It follows the MVC architecture and Uses Postman for 
+API testing and documentation.
+
+---
+
+## 🚀 Features
+
+- 📝 CRUD Operations: Create, read, update, and delete recipes. 
+- 🧠 MVC Architecture: Clean and scalable code organization. 
+- 🔀 RESTful Routes — Clean, structured endpoints for handling CRUD operations via HTTP methods.
+- 🍃 MongoDB Integration: Uses Mongoose for schema-based modeling. 
+- 🛡️ Middleware Support: Custom and Express middlewares for better control. 
+- 📬 API Testing: Fully Testable via tools like Postman. 
+- 🚨 Error Handling: Displays  Messages for API Errors and No-Results Scenarios.
+
+---
+
+## Built With 🛠️
+- 🧠 Node.js – Backend JavaScript Runtime Environment.
+- 🔀 Express.js – Web Framework for routing and middleware.
+- 🍃 Mongoose (MongoDB) – ODM for interacting with MongoDB Database.
+- 📬 Postman – Tool for API Testing and Documentation.
+- ♻️ nodemon – Dev tool for auto-restarting server on changes.
+- 🧩 EJS – Templating engine for rendering dynamic views.
+- 🌱 dotenv – Loads environment variables from `.env`
+
+---
+
+## Deployed App 🚀 
+#### For Live Demo Click the Below Link ⬇️ <br/>
+🌐 Live URL : https://kitechnapi.onrender.com/ 
+
+---
+
+## Project Structure 🗂️
+
+```bash
+KiTechnAPI/
+├── 📂 config/           # ⚙️ Configuration files (e.g., DB connection)
+├── 📂 controllers/      # 🧠 Controller Functions
+├── 📂 middlewares/      # 🛡️ Custom middleware (e.g., Error Dandling)
+├── 📂 models/           # 🛢️ Mongoose Schemas and Data Models
+├── 📂 routers/          # 🛣️ Express route Definitions
+├── 📂 views/            # 🎨 EJS templates for Rendering Views
+├── 📄 app.js            # 🚀 Additional Application Logic
+├── 📄 main.js           # 🧩 Main application entry point & server setup
+├── 📄 package.json      # 📦 Project Dependencies
+├── 📄 package-lock.json # 🔒 Exact versions of Installed Dependencies
+├── 📄 .gitignore        # 🚫 Specifies Files and Directories to Ignore in Git
+└── 📄 .env              # 🌱 Environment Variables (e.g., DB URL, PORT, Secrets)
+
+```
+
+---
+  
+## Project Configurations ⚙️
+
+### 📦 1. Initialize Node Project
+```bash
+ npm init
+```
+🛠️ Sets up your Project with Default Settings.
+
+
+### 🚀 2. Install Core Dependencies
+
+```bash
+npm install express
+npm install mongoose
+npm install dotenv
+npm install ejs
+```
+- express – 🔀 Web Framework for routing and middleware.
+- mongoose – 🍃 ODM for interacting with MongoDB Database.
+- dotenv – 🌱 Load environment variables from .env
+- ejs – 🧩 Template engine for dynamic HTML rendering
+
+
+### 🔄 3. Install Dev Dependency
+```bash
+ npm install nodemon
+```
+- nodemon – ♻️Automatically restarts server on file changes
+
+
+### 🧩 4. Start the Server
+ 
+```bash
+  npm start
+```
+▶️ Runs the server using your defined start script in package.json.
+
+---
+
+## Getting Started 🚀
+
+### 📋 1. Prerequisites
+- ✅ Node.js Installed
+- ✅ MongoDB installed (Local or Cloud - MongoDB Atlas)
+
+### 📦 2. Installation
+
+Clone the repository
+
+```bash 
+git clone https://github.com/samikannup53/KiTechnAPI.git
+```
+
+Move into the project directory
+
+```bash 
+cd KiTechnAPI
+```
+Install all dependencies
+
+```bash
+npm install
+```
+### 🔐 3. Environment Setup
+Create a `.env` file in the root directory with the following content:
+
+```bash
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/kiTechnAPI (Your MongoDB URL)
+```
+
+### ▶️ 4. Run the Application
+
+```bash
+npm start
+```
+🌐 The server will start at: http://localhost:3000
+
+---
+
+## API Endpoints 📮
+
+| Method | Endpoint             | Description         | Request Body   | Response             |
+| ------ | ------------------   | ------------------- | ------------   | ------------------   |
+| GET    | `/recipes`           | Get all recipes     | ❌             | ✅ List of recipes  |
+| GET    | `/recipes/:id`       | Get recipe by ID    | ❌             | ✅ Single recipe    |
+| POST   | `/recipes`           | Create a new recipe | ✅ JSON data   | ✅ Created recipe   |
+| PUT    | `/recipes/:recipeID` | Update recipe by ID | ✅ JSON data   | ✅ Updated recipe   |
+| DELETE | `/recipes/:recipeID` | Delete recipe by ID | ❌             | ✅ Deletion message |
+
+---
+
+
+<h3 align= 'center' style="color: fuchsia"><b>👀 Thanks for Exploring My Repository! 💖</b></h3>
