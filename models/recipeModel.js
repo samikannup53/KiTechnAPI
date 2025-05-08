@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Schema for Recipe
 const recipeSchema = new mongoose.Schema({
   recipeID: { type: String, required: true, unique: true },
   name: { type: String, required: true },
@@ -11,6 +12,7 @@ const recipeSchema = new mongoose.Schema({
   process: { type: [String] },
 });
 
+// Model Creation
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
 module.exports = Recipe;
