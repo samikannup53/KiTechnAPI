@@ -3,10 +3,783 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>KiTechnAPI | Documentation</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Prism CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+    <!-- Custome Prism Theme -->
+    <link rel="stylesheet" href="css/prism.css" />
+    <!-- Prism JS -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+    <!-- JSON language support -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
   </head>
-  <body>
-    <h1>This is Documentation Page</h1>
+
+  <body class="font-Poppins">
+    <section class="flex">
+      <!-- Side Menu Bar -->
+      <aside
+        class="w-64 fixed top-0 left-0 h-screen shadow-md p-4 z-10 bg-gradient-to-br from-[#1e3c72] via-[#2a5298] to-[#5006a0]"
+      >
+        <a href="/">
+          <img
+            class="w-[180px] mb-6 -ml-2"
+            src="/images/kitechnapiLogo.png"
+            alt=""
+          />
+        </a>
+
+        <nav class="flex flex-col justify-start gap-2">
+          <a href="#Get-All-Recipes" class="text-white text-sm">
+            <span class="bg-green-600 text-white rounded-sm px-3 text-xs"
+              >GET</span
+            >
+            &nbsp; <span class="hover:underline">Get All Recipes</span></a
+          >
+          <a href="#Get-Recipe-by-RecipeID" class="text-white text-sm">
+            <span class="bg-green-600 text-white rounded-sm px-3 text-xs"
+              >GET</span
+            >
+            &nbsp; <span class="hover:underline">Get Single Recipe</span></a
+          >
+          <a href="#Create-New-Recipe" class="text-white text-sm">
+            <span class="bg-blue-600 text-white rounded-sm px-2 text-xs"
+              >POST</span
+            >
+            &nbsp; <span class="hover:underline">Create New Recipe</span></a
+          >
+          <a href="#Update-Recipe" class="text-white text-sm">
+            <span class="bg-yellow-600 text-white rounded-sm px-3 text-xs"
+              >PUT</span
+            >
+            &nbsp; <span class="hover:underline">Update Recipe</span></a
+          >
+          <a href="#Delete-Single-Recipe" class="text-white text-sm">
+            <span class="bg-red-600 text-white rounded-sm px-3 text-xs"
+              >DEL
+            </span>
+            &nbsp;
+            <span class="hover:underline">Delete Single Recipe</span></a
+          >
+        </nav>
+      </aside>
+
+      <!-- Main Scrollable Main Content -->
+      <main class="ml-64 h-screen overflow-y-auto w-full bg-[#ecf4f5]">
+        <!-- Endpoint 1 -->
+        <section
+          id="Get-All-Recipes"
+          class="flex flex-col lg:flex-row gap-2 border-b border-gray-400"
+        >
+          <!-- Endpoint About Section -->
+          <div class="p-6 w-full lg:w-2/3">
+            <!-- Endpoint Title -->
+            <h3 class="text-lg font-semibold">
+              <span class="text-green-600">GET</span> &nbsp; Get All Recipes
+            </h3>
+            <!-- Endpoint Description -->
+            <p class="my-2 text-gray-700">
+              Retrieves a list of all available recipes from the API.
+            </p>
+            <!-- Endpoint -->
+            <div class="mt-8 text-lg bg-gray-700 rounded-sm p-2">
+              <span class="text-gray-300">Endpoint :</span> &nbsp;
+              <span class="text-[#00ff00]">GET</span>
+              <span class="text-blue-500">/recipes</span>
+            </div>
+            <!-- Request Details -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Request :
+              </h3>
+              <h4 class="mt-4">
+                <span class="text-gray-700 font-semibold">Method</span> :
+                <span class="bg-green-600 text-white rounded-sm px-3 text-sm"
+                  >GET</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes</span
+                >
+              </h4>
+            </div>
+            <!-- Example Usecase -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 py-4"
+              >
+                Example Usecase :
+              </h3>
+              <p class="capitalize text-gray-700">
+                Use this endpoint to fetch and display all recipes on a homepage
+                or recipe listing page in your app
+              </p>
+            </div>
+          </div>
+
+          <!-- Request Response Section -->
+          <div class="bg-gray-900 text-white w-full lg:w-1/2 p-8">
+            <!-- Request Part -->
+            <div>
+              <h1>Example Request</h1>
+              <div class="mt-4 bg-black p-3 rounded-sm">
+                <span class="text-gray-500 font-semibold">URL Path :</span>
+                <a class="text-[#00ff00]">
+                  https://kitechnapi.onrender.com/recipes</a
+                >
+              </div>
+            </div>
+            <!-- Response Part -->
+            <div class="mt-8">
+              <h1>Example Response</h1>
+              <div class="mt-4 bg-black rounded-sm px-2 pt-4">
+                <span class="bg-gray-900 px-2 py-1 rounded-sm">json</span>
+                <pre>
+<code class="language-json">
+  {
+    "message": "Found All Recipes",
+    "recipes": [
+      {
+        "_id": "6817762f91122cea42a8fcd1",
+        "recipeID": "RCP001",
+        "name": "Chicken Biriyani",
+        "description": "A Hot and Spicy Chicken Biriyani",
+        "category": "Biriyani",
+        "ingredients": [],
+        "process": [],
+        "__v": 0
+      }
+    ]
+  }
+</code>
+              </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Endpoint 2 -->
+        <section
+          id="Get-Recipe-by-RecipeID"
+          class="flex flex-col lg:flex-row gap-2 border-b border-gray-400"
+        >
+          <!-- Endpoint About Section -->
+          <div class="p-6 w-full lg:w-2/3">
+            <!-- Endpoint Title -->
+            <h3 class="text-lg font-semibold">
+              <span class="text-green-600">GET</span> &nbsp; Get Recipe by
+              RecipeID
+            </h3>
+            <!-- Endpoint Description -->
+            <p class="my-2 text-gray-700">
+              Fetches a single recipe based on its unique recipeID. Useful for
+              viewing detailed information about a specific recipe.
+            </p>
+            <!-- Endpoint -->
+            <div class="mt-8 text-lg bg-gray-700 rounded-sm p-2">
+              <span class="text-gray-300">Endpoint :</span> &nbsp;
+              <span class="text-[#00ff00]">GET</span>
+              <span class="text-blue-500">/recipes/:recipeID</span>
+            </div>
+            <!-- Request Details -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Request :
+              </h3>
+              <h4 class="mt-4">
+                <span class="text-gray-800 font-semibold">Method</span> :
+                <span class="bg-green-600 text-white rounded-sm px-3 text-sm"
+                  >GET</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL Format</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes/:recipeID</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes/RCP001</span
+                >
+              </h4>
+            </div>
+            <!-- Parameters -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Parameter :
+              </h3>
+              <h4 class="mt-2">
+                <span
+                  class="text-purple-600 font-semibold bg-gray-300 px-2 rounded-lg"
+                  >:recipeID</span
+                >
+                :
+                <span class="text-gray-700"
+                  >(string) – The unique identifier of the recipe you want to
+                  retrieve.</span
+                >
+              </h4>
+            </div>
+            <!-- Example Usecase -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 py-4"
+              >
+                Example Usecase :
+              </h3>
+              <p class="capitalize text-gray-700">
+                Use this endpoint to fetch and display all recipes on a homepage
+                or recipe listing page in your app
+              </p>
+            </div>
+          </div>
+
+          <!-- Request Response Section -->
+          <div class="bg-gray-900 text-white w-full lg:w-1/2 p-8">
+            <!-- Request Part -->
+            <div>
+              <h1>Example Request</h1>
+              <div class="mt-4 bg-black p-3 rounded-sm">
+                <span class="text-gray-500 font-semibold">URL Path :</span>
+                <a class="text-[#00ff00]">
+                  https://kitechnapi.onrender.com/recipes/RCP001</a
+                >
+              </div>
+            </div>
+            <!-- Response Part -->
+            <div class="mt-8">
+              <h1>Example Response</h1>
+              <div class="mt-4 bg-black rounded-sm px-2 pt-4">
+                <span class="bg-gray-900 px-2 py-1 rounded-sm">json</span>
+                <pre>
+<code class="language-json">
+  {
+    "message": "Recipe Found for given RecipeID : RCP001",
+    "recipe": {
+      "_id": "6817762f91122cea42a8fcd1",
+      "recipeID": "RCP001",
+      "name": "Chicken Biriyani",
+      "description": "A Hot and Spicy Chicken Biriyani",
+      "category": "Biriyani",
+      "ingredients": [],
+      "process": [],
+      "__v": 0
+    }
+  }
+</code>
+              </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Endpoint 3 -->
+        <section
+          id="Create-New-Recipe"
+          class="flex flex-col lg:flex-row gap-2 border-b border-gray-400"
+        >
+          <!-- Endpoint About Section -->
+          <div class="p-6 w-full lg:w-2/3">
+            <!-- Endpoint Title -->
+            <h3 class="text-lg font-semibold">
+              <span class="text-blue-600">POST</span> &nbsp; Create New Recipe
+            </h3>
+            <!-- Endpoint Description -->
+            <p class="my-2 text-gray-700">
+              Creates a new recipe by submitting recipe details to the server
+            </p>
+            <!-- Endpoint -->
+            <div class="mt-8 text-lg bg-gray-700 rounded-sm p-2">
+              <span class="text-gray-300">Endpoint :</span> &nbsp;
+              <span class="text-blue-400">POST</span>
+              <span class="text-blue-500">/recipes</span>
+            </div>
+            <!-- Request Details -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Request :
+              </h3>
+              <h4 class="mt-4">
+                <span class="text-gray-800 font-semibold">Method</span> :
+                <span class="bg-blue-600 text-white rounded-sm px-3 text-sm"
+                  >POST</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">Content-Type</span> :
+                <span class="text-purple-600 font-semibold"
+                  >application/json</span
+                >
+              </h4>
+            </div>
+
+            <!-- Body Schema -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Request Body Schema :
+                <span class="text-purple-600 font-semibold"
+                  >application/json</span
+                >
+              </h3>
+              <div class="mt-5">
+                <span class="text-red-600 font-semibold">* Required</span>
+                <div class="bg-gray-300 rounded-md p-4">
+                  <p>
+                    <span class="text-gray-700 font-mono">recipeID</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">name</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">description</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">category</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">ingredients</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >array object</span
+                    >
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">process</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >array object</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Usecase -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 py-4"
+              >
+                Example Usecase :
+              </h3>
+              <p class="capitalize text-gray-700">
+                Useful for adding new dishes to your recipe database
+              </p>
+            </div>
+          </div>
+
+          <!-- Request Response Section -->
+          <div class="bg-gray-900 text-white w-full lg:w-1/2 p-8">
+            <!-- Request Part -->
+            <div>
+              <h1>Example Request</h1>
+              <div class="mt-4 bg-black p-3 rounded-sm">
+                <span class="text-gray-500 font-semibold">URL Path :</span>
+                <a class="text-[#00ff00]">
+                  https://kitechnapi.onrender.com/recipes</a
+                >
+                <div class="mt-4">
+                  <span class="text-gray-500 font-semibold">Body Data :</span>
+                  <pre>
+<code class="language-json">
+  {
+    "recipeID": "RCP003",
+    "name": "Chicken Soup",
+    "description": "A Hot and Spicy Chicken Soup",
+    "category": "Soup"
+  }
+</code>
+              </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Response Part -->
+            <div class="mt-8">
+              <h1>Example Response</h1>
+              <div class="mt-4 bg-black rounded-sm px-2 pt-4">
+                <span class="bg-gray-900 px-2 py-1 rounded-sm">json</span>
+                <pre>
+<code class="language-json">
+  {
+  "message": "New Recipe Created Successfully",
+  "recipe": {
+    "recipeID": "RCP003",
+    "name": "Chicken Soup",
+    "description": "A Hot and Spicy Chicken Soup",
+    "category": "Soup",
+    "ingredients": [],
+    "process": [],
+    "_id": "6818b982efd63d2f72f973fe",
+    "__v": 0
+  }
+}
+</code>
+              </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Endpoint 4 -->
+        <section
+          id="Update-Recipe"
+          class="flex flex-col lg:flex-row gap-2 border-b border-gray-400"
+        >
+          <!-- Endpoint About Section -->
+          <div class="p-6 w-full lg:w-2/3">
+            <!-- Endpoint Title -->
+            <h3 class="text-lg font-semibold">
+              <span class="text-yellow-600">PUT</span> &nbsp; Update Recipe by
+              RecipeID
+            </h3>
+            <!-- Endpoint Description -->
+            <p class="my-2 text-gray-700">
+              Updates an existing recipe using its unique recipeID
+            </p>
+            <!-- Endpoint -->
+            <div class="mt-8 text-lg bg-gray-700 rounded-sm p-2">
+              <span class="text-gray-300">Endpoint :</span> &nbsp;
+              <span class="text-yellow-400">PUT</span>
+              <span class="text-blue-500">/recipes/:recipeID</span>
+            </div>
+            <!-- Parameters -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Parameter :
+              </h3>
+              <h4 class="mt-2">
+                <span
+                  class="text-purple-600 font-semibold bg-gray-300 px-2 rounded-lg"
+                  >:recipeID</span
+                >
+                :
+                <span class="text-gray-700"
+                  >(string) – The unique identifier of the recipe you want to
+                  Update.</span
+                >
+              </h4>
+            </div>
+            <!-- Request Details -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Request :
+              </h3>
+              <h4 class="mt-4">
+                <span class="text-gray-800 font-semibold">Method</span> :
+                <span class="bg-yellow-600 text-white rounded-sm px-3 text-sm"
+                  >PUT</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL Format</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes/:recipeID</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes/RCP002</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">Content-Type</span> :
+                <span class="text-purple-600 font-semibold"
+                  >application/json</span
+                >
+              </h4>
+            </div>
+
+            <!-- Body Schema -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Request Body Schema :
+                <span class="text-purple-600 font-semibold"
+                  >application/json</span
+                >
+              </h3>
+              <div class="mt-5">
+                <span class="text-red-600 font-semibold">* Required</span>
+                <div class="bg-gray-300 rounded-md p-4">
+                  <p>
+                    <span class="text-gray-700 font-mono">recipeID</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">name</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">description</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">category</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >string</span
+                    >
+                    <span class="text-red-600">*</span>
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">ingredients</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >array object</span
+                    >
+                  </p>
+                  <p>
+                    <span class="text-gray-700 font-mono">process</span> -
+                    <span class="text-gray-700 font-semibold font-mono"
+                      >array object</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Usecase -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 py-4"
+              >
+                Example Usecase :
+              </h3>
+              <p class="capitalize text-gray-700">
+                Useful for adding new dishes to your recipe database
+              </p>
+            </div>
+          </div>
+
+          <!-- Request Response Section -->
+          <div class="bg-gray-900 text-white w-full lg:w-1/2 p-8">
+            <!-- Request Part -->
+            <div>
+              <h1>Example Request</h1>
+              <div class="mt-4 bg-black p-3 rounded-sm">
+                <span class="text-gray-500 font-semibold">URL Path :</span>
+                <a class="text-[#00ff00]">
+                  https://kitechnapi.onrender.com/recipes/RCP002</a
+                >
+                <div class="mt-4">
+                  <span class="text-gray-500 font-semibold">Body Data :</span>
+                  <pre>
+<code class="language-json">
+  {
+    "name": "Mutton Biriyani",
+    "description": "Hot and Tasty Mutton Biriyani with Egg",
+    "category": "Biriyani"
+  }
+</code>
+              </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Response Part -->
+            <div class="mt-8">
+              <h1>Example Response</h1>
+              <div class="mt-4 bg-black rounded-sm px-2 pt-4">
+                <span class="bg-gray-900 px-2 py-1 rounded-sm">json</span>
+                <pre>
+<code class="language-json">
+  {
+  "message": "Recipe details Updated for given RecipeID : RCP002",
+  "updatedRecipe": {
+    "_id": "6818b658efd63d2f72f973f5",
+    "recipeID": "RCP002",
+    "name": "Mutton Biriyani",
+    "description": "Hot and Tasty Mutton Biriyani with Egg",
+    "category": "Biriyani",
+    "ingredients": [],
+    "process": [],
+    "__v": 0
+  }
+}
+</code>
+              </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Endpoint 5 -->
+        <section
+          id="Delete-Single-Recipe"
+          class="flex flex-col lg:flex-row gap-2 border-b border-gray-400 min-h-screen"
+        >
+          <!-- Endpoint About Section -->
+          <div class="p-6 w-full lg:w-2/3">
+            <!-- Endpoint Title -->
+            <h3 class="text-lg font-semibold">
+              <span class="text-red-600">DELETE</span> &nbsp; Delete Recipe by
+              RecipID
+            </h3>
+            <!-- Endpoint Description -->
+            <p class="my-2 text-gray-700">
+              Deletes an existing recipe from the database using its unique
+              recipeID
+            </p>
+            <!-- Endpoint -->
+            <div class="mt-8 text-lg bg-gray-700 rounded-sm p-2">
+              <span class="text-gray-300">Endpoint :</span> &nbsp;
+              <span class="text-red-600">DELETE</span>
+              <span class="text-blue-500">/recipes/:recipeID</span>
+            </div>
+            <!-- Request Details -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Request :
+              </h3>
+              <h4 class="mt-4">
+                <span class="text-gray-800 font-semibold">Method</span> :
+                <span class="bg-red-600 text-white rounded-sm px-3 text-sm"
+                  >DELETE</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL Format</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes/:recipeID</span
+                >
+              </h4>
+              <h4 class="mt-2">
+                <span class="text-gray-700 font-semibold">URL</span> :
+                <span class="text-blue-700 font-semibold"
+                  >https://kitechnapi.onrender.com/recipes/RCP001</span
+                >
+              </h4>
+            </div>
+            <!-- Parameters -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 pt-4"
+              >
+                Parameter :
+              </h3>
+              <h4 class="mt-2">
+                <span
+                  class="text-purple-600 font-semibold bg-gray-300 px-2 rounded-lg"
+                  >:recipeID</span
+                >
+                :
+                <span class="text-gray-700"
+                  >(string) – The unique identifier of the recipe you want to
+                  Delete.</span
+                >
+              </h4>
+            </div>
+            <!-- Example Usecase -->
+            <div class="mt-8">
+              <h3
+                class="text-lg font-semibold text-gray-700 border-t border-gray-400 py-4"
+              >
+                Example Usecase :
+              </h3>
+              <p class="capitalize text-gray-700">
+                Useful for removing Outdated or Incorrect Recipes
+              </p>
+            </div>
+          </div>
+
+          <!-- Request Response Section -->
+          <div class="bg-gray-900 text-white w-full lg:w-1/2 p-8">
+            <!-- Request Part -->
+            <div>
+              <h1>Example Request</h1>
+              <div class="mt-4 bg-black p-3 rounded-sm">
+                <span class="text-gray-500 font-semibold">URL Path :</span>
+                <a class="text-[#00ff00]">
+                  https://kitechnapi.onrender.com/recipes/RCP001</a
+                >
+              </div>
+            </div>
+            <!-- Response Part -->
+            <div class="mt-8">
+              <h1>Example Response</h1>
+              <div class="mt-4 bg-black rounded-sm px-2 pt-4">
+                <span class="bg-gray-900 px-2 py-1 rounded-sm">json</span>
+                <pre>
+<code class="language-json">
+{
+  "message": "Recipe Deleted for given RecipeID : RCP001",
+  "deletedRecipe": {
+    "_id": "6818b982efd63d2f72f973fe",
+    "recipeID": "RCP003",
+    "name": "Chicken Soup",
+    "description": "A Hot and Spicy Chicken Soup",
+    "category": "Soup",
+    "ingredients": [],
+    "process": [],
+    "__v": 0
+  }
+}
+</code>
+              </pre>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
   </body>
 </html>

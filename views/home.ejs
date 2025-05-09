@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>KiTechnAPI | Home</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
@@ -15,8 +16,9 @@
     />
   </head>
   <body class="font-Poppins">
+    <!-- Header and Hero Sections -->
     <section
-      class="bg-gradient-to-br from-[#1e3c72] via-[#2a5298] to-[#5006a0] min-h-[100vh]"
+      class="bg-gradient-to-br from-[#1e3c72] via-[#2a5298] to-[#5006a0] min-h-[100vh] xl:min-h-[70ch]"
     >
       <section class="container mx-auto max-w-[1200px]">
         <!-- Header Section -->
@@ -108,6 +110,7 @@
       </section>
     </section>
 
+    <!-- About Section -->
     <section class="bg-gradient-to-br from-white via-[#e0f7fa] to-[#b2ebf2]">
       <div class="container mx-auto p-4">
         <div class="flex flex-col items-center justify-center py-10">
@@ -157,6 +160,7 @@
             </div>
           </div>
         </div>
+
         <!-- API Section -->
         <div class="w-[90%] sm:w-full lg:w-[75%] max-w-[980px] mx-auto my-6">
           <!-- Section Heading -->
@@ -172,50 +176,70 @@
                 class="bg-blue-100 text-blue-900 text-left text-sm uppercase tracking-wider"
               >
                 <tr>
-                  <th class="py-3 px-4">Method</th>
-                  <th class="py-3 px-4">Endpoint</th>
-                  <th class="py-3 px-4">Description</th>
-                  <th class="py-3 px-4">Request Body</th>
-                  <th class="py-3 px-4">Response</th>
+                  <th class="py-2 lg:py-3 px-3">Method</th>
+                  <th class="py-2 lg:py-3 px-3">Endpoint</th>
+                  <th class="py-2 lg:py-3 px-3">Description</th>
+                  <th class="py-2 lg:py-3 px-3">Request Body</th>
+                  <th class="py-2 lg:py-3 px-3">Response</th>
                 </tr>
               </thead>
               <tbody
                 class="text-gray-700 text-sm bg-white divide-y divide-gray-100"
               >
                 <tr>
-                  <td class="py-3 px-4 font-semibold text-green-600">GET</td>
-                  <td class="py-3 px-4">/recipes</td>
-                  <td class="py-3 px-4">Get all recipes</td>
-                  <td class="py-3 px-4 text-red-500">❌</td>
-                  <td class="py-3 px-4 text-green-500">✅ List of Recipes</td>
+                  <td class="py-2 lg:py-3 px-3 font-semibold text-green-600">
+                    GET
+                  </td>
+                  <td class="py-2 lg:py-3 px-3">/recipes</td>
+                  <td class="py-2 lg:py-3 px-3">Get all recipes</td>
+                  <td class="py-2 lg:py-3 px-3 text-red-500">❌</td>
+                  <td class="py-2 lg:py-3 px-3 text-green-500">
+                    ✅ List of Recipes
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-semibold text-green-600">GET</td>
-                  <td class="py-3 px-4">/recipes/:recipeID</td>
-                  <td class="py-3 px-4">Get Recipe by ID</td>
-                  <td class="py-3 px-4 text-red-500">❌</td>
-                  <td class="py-3 px-4 text-green-500">✅ Single Recipe</td>
+                  <td class="py-2 lg:py-3 px-3 font-semibold text-green-600">
+                    GET
+                  </td>
+                  <td class="py-2 lg:py-3 px-3">/recipes/:recipeID</td>
+                  <td class="py-2 lg:py-3 px-3">Get Recipe by ID</td>
+                  <td class="py-2 lg:py-3 px-3 text-red-500">❌</td>
+                  <td class="py-2 lg:py-3 px-3 text-green-500">
+                    ✅ Single Recipe
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-semibold text-blue-600">POST</td>
-                  <td class="py-3 px-4">/recipes</td>
-                  <td class="py-3 px-4">Create a New Recipe</td>
-                  <td class="py-3 px-4 text-green-500">✅ JSON Data</td>
-                  <td class="py-3 px-4 text-green-500">✅ Created Recipe</td>
+                  <td class="py-2 lg:py-3 px-3 font-semibold text-blue-600">
+                    POST
+                  </td>
+                  <td class="py-2 lg:py-3 px-3">/recipes</td>
+                  <td class="py-2 lg:py-3 px-3">Create a New Recipe</td>
+                  <td class="py-2 lg:py-3 px-3 text-green-500">✅ JSON Data</td>
+                  <td class="py-2 lg:py-3 px-3 text-green-500">
+                    ✅ Created Recipe
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-semibold text-yellow-600">PUT</td>
-                  <td class="py-3 px-4">/recipes/:recipeID</td>
-                  <td class="py-3 px-4">Update Recipe by ID</td>
-                  <td class="py-3 px-4 text-green-500">✅ JSON Data</td>
-                  <td class="py-3 px-4 text-green-500">✅ Updated Recipe</td>
+                  <td class="py-2 lg:py-3 px-3 font-semibold text-yellow-600">
+                    PUT
+                  </td>
+                  <td class="py-2 lg:py-3 px-3">/recipes/:recipeID</td>
+                  <td class="py-2 lg:py-3 px-3">Update Recipe by ID</td>
+                  <td class="py-2 lg:py-3 px-3 text-green-500">✅ JSON Data</td>
+                  <td class="py-2 lg:py-3 px-3 text-green-500">
+                    ✅ Updated Recipe
+                  </td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-4 font-semibold text-red-600">DELETE</td>
-                  <td class="py-3 px-4">/recipes/:recipeID</td>
-                  <td class="py-3 px-4">Delete Eecipe by ID</td>
-                  <td class="py-3 px-4 text-red-500">❌</td>
-                  <td class="py-3 px-4 text-green-500">✅ Deleted Recipe</td>
+                  <td class="py-2 lg:py-3 px-3 font-semibold text-red-600">
+                    DELETE
+                  </td>
+                  <td class="py-2 lg:py-3 px-3">/recipes/:recipeID</td>
+                  <td class="py-2 lg:py-3 px-3">Delete Eecipe by ID</td>
+                  <td class="py-2 lg:py-3 px-3 text-red-500">❌</td>
+                  <td class="py-2 lg:py-3 px-3 text-green-500">
+                    ✅ Deleted Recipe
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -234,6 +258,7 @@
       </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="bg-[#1e3c72] text-white py-10">
       <div class="container mx-auto flex flex-col items-center gap-2">
         <p class="text-white">

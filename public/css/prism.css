@@ -1,0 +1,24 @@
+/* Code block wrapper styles */
+pre,
+code {
+  background-color: black !important; /* black */
+  color: #ffffff; /* default fallback text */
+  font-size: 0.875rem; /* text-sm */
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 6px;
+  overflow-x: auto;
+  display: block;
+}
+
+/* Prism token overrides */
+.token.property {
+  color: #ff69b4; /* pink */
+}
+
+.token.string,
+.token.number,
+.token.boolean,
+.token.null {
+  color: #00ff00; /* bright green */
+}
