@@ -31,7 +31,7 @@
     <section class="flex">
       <!-- Side Menu Bar -->
       <aside
-        class="w-64 fixed top-0 left-0 h-screen shadow-md p-4 z-10 bg-gradient-to-br from-[#1e3c72] via-[#2a5298] to-[#5006a0]"
+        class="w-64 hidden sm:block fixed top-0 left-0 h-screen shadow-md p-4 z-10 bg-gradient-to-br from-[#1e3c72] via-[#2a5298] to-[#5006a0]"
       >
         <a href="/">
           <img
@@ -77,7 +77,7 @@
       </aside>
 
       <!-- Main Scrollable Main Content -->
-      <main class="ml-64 h-screen overflow-y-auto w-full bg-[#ecf4f5]">
+      <main class="ml-0 sm:ml-64 h-screen overflow-y-auto w-full bg-[#ecf4f5]">
         <!-- Endpoint 1 -->
         <section
           id="Get-All-Recipes"
@@ -308,7 +308,7 @@
             </h3>
             <!-- Endpoint Description -->
             <p class="my-2 text-gray-700">
-              Creates a new recipe by submitting recipe details to the server
+              Creates a new recipe by submitting required recipe details to the server
             </p>
             <!-- Endpoint -->
             <div class="mt-8 text-lg bg-gray-700 rounded-sm p-2">
@@ -414,7 +414,7 @@
           </div>
 
           <!-- Request Response Section -->
-          <div class="bg-gray-900 text-white w-full lg:w-1/2 p-8">
+          <div class="bg-gray-900 text-white w-full lg:w-2/3 p-8">
             <!-- Request Part -->
             <div>
               <h1>Example Request</h1>
