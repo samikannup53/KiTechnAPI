@@ -9,24 +9,27 @@ API testing and documentation.
 
 ## 🚀 Features
 
-- 📝 CRUD Operations: Create, read, update, and delete recipes. 
-- 🧠 MVC Architecture: Clean and scalable code organization. 
-- 🔀 RESTful Routes — Clean, structured endpoints for handling CRUD operations via HTTP methods.
-- 🍃 MongoDB Integration: Uses Mongoose for schema-based modeling. 
-- 🛡️ Middleware Support: Custom and Express middlewares for better control. 
-- 📬 API Testing: Fully Testable via tools like Postman. 
-- 🚨 Error Handling: Displays  Messages for API Errors and No-Results Scenarios.
+- 📝 **CRUD Operations** - Create, read, update, and delete recipes. 
+- 🧠 **MVC Architecture** - Clean and scalable code organization. 
+- 🔀 **RESTful Routes** - Clean, structured endpoints for handling CRUD operations via HTTP methods.
+- 🍃 **MongoDB Integration** - Uses Mongoose for schema-based modeling. 
+- 🖼️ **EJS Templating** - Dynamic and reusable UI with Embedded JavaScript templates.
+- 🛡️ **Middleware Support** - Custom and Express middlewares for better control. 
+- 📬 **Postman Collection** - Pre-configured collection for testing all endpoints with ease.
+- 🗂️ **Modular Project Structure** - Scalable and organized codebase ready for expansion.
+- 🚨 **Error Handling** - Displays  Messages for API Errors and No-Results Scenarios.
 
 ---
 
 ## Built With 🛠️
-- 🧠 Node.js – Backend JavaScript Runtime Environment.
-- 🔀 Express.js – Web Framework for routing and middleware.
-- 🍃 Mongoose (MongoDB) – ODM for interacting with MongoDB Database.
-- 📬 Postman – Tool for API Testing and Documentation.
-- ♻️ nodemon – Dev tool for auto-restarting server on changes.
-- 🧩 EJS – Templating engine for rendering dynamic views.
-- 🌱 dotenv – Loads environment variables from `.env`
+- 🧠 **Node.js** – Backend JavaScript Runtime Environment.
+- 🔀 **Express.js** – Web Framework for routing and middleware.
+- 🍃 **Mongoose (MongoDB)** – ODM for interacting with MongoDB Database.
+- 🎨 **Tailwind CSS** – Utility-first CSS framework for crafting Modern & UI.
+- 📬 **Postman** – Tool for API Testing and Documentation.
+- ♻️ **nodemon** – Dev tool for auto-restarting server on changes.
+- 🧩 **EJS** – Templating engine for rendering dynamic views.
+- 🌱 **dotenv** – Loads environment variables from `.env`
 
 ---
 
