@@ -33,6 +33,18 @@ API testing and documentation.
 
 ---
 
+## API Endpoints 📮
+
+| Method | Endpoint             | Description         | Request Body   | Response             |
+| ------ | ------------------   | ------------------- | ------------   | ------------------   |
+| GET    | `/recipes`           | Get all recipes     | ❌             | ✅ List of recipes  |
+| GET    | `/recipes/:id`       | Get recipe by ID    | ❌             | ✅ Single recipe    |
+| POST   | `/recipes`           | Create a new recipe | ✅ JSON data   | ✅ Created recipe   |
+| PUT    | `/recipes/:recipeID` | Update recipe by ID | ✅ JSON data   | ✅ Updated recipe   |
+| DELETE | `/recipes/:recipeID` | Delete recipe by ID | ❌             | ✅ Deletion message |
+
+---
+
 ## Deployed App 🚀 
 #### For Live Demo Click the Below Link ⬇️ <br/>
 🌐 Live URL : https://kitechnapi.onrender.com/ 
@@ -128,7 +140,7 @@ Inside `config/tailwindConfig.css`, add the following:
 ```
 - 🔄 This script will watch for changes and regenerate `final style.css`.
 
-#### 🧵 Step-4. Run Build Process
+#### 🎨 Stap-4. Build Tailwind CSS
 ```bash
   npm run build
 ```
@@ -146,7 +158,7 @@ Inside `config/tailwindConfig.css`, add the following:
 
 ## Getting Started 🚀
 
-### 📋 1. Prerequisites
+### 📋 1. Requirments
 - ✅ Node.js Installed
 - ✅ MongoDB installed (Local or Cloud - MongoDB Atlas)
 
@@ -175,25 +187,18 @@ Create a `.env` file in the root directory with the following content:
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/kiTechnAPI (Your MongoDB URL)
 ```
+### 🎨 4. Build Tailwind CSS
+```bash
+  npm run build
+```
+- 🧵 Compiles Tailwind styles into `public/css/style.css`. Run this after installing dependencies.
 
-### ▶️ 4. Run the Application
+### ▶️ 5. Run the Application
 
 ```bash
 npm start
 ```
 🌐 The server will start at: http://localhost:3000
-
----
-
-## API Endpoints 📮
-
-| Method | Endpoint             | Description         | Request Body   | Response             |
-| ------ | ------------------   | ------------------- | ------------   | ------------------   |
-| GET    | `/recipes`           | Get all recipes     | ❌             | ✅ List of recipes  |
-| GET    | `/recipes/:id`       | Get recipe by ID    | ❌             | ✅ Single recipe    |
-| POST   | `/recipes`           | Create a new recipe | ✅ JSON data   | ✅ Created recipe   |
-| PUT    | `/recipes/:recipeID` | Update recipe by ID | ✅ JSON data   | ✅ Updated recipe   |
-| DELETE | `/recipes/:recipeID` | Delete recipe by ID | ❌             | ✅ Deletion message |
 
 ---
 
