@@ -1,0 +1,589 @@
+{
+	"info": {
+		"_postman_id": "67707fff-f3d6-46fb-a8ab-4de66583c696",
+		"name": "KiTechnAPI",
+		"description": "### ✨ A Simple and Clean ⚙️ C-R-U-D 📝 Application\n\nKiTechnAPI is a simple and clean CRUD application designed to manage recipes efficiently.Built with Node.js, Express, and Mongoose (MongoDB) and It follows the MVC architecture and Uses Postman for API testing and documentation.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44472236",
+		"_collection_link": "https://sami-7999875.postman.co/workspace/28c41a98-0994-4ccd-8526-21c57cb6864d/collection/44472236-67707fff-f3d6-46fb-a8ab-4de66583c696?action=share&source=collection_link&creator=44472236"
+	},
+	"item": [
+		{
+			"name": "Get All Recipes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kitechnapi.onrender.com/recipes",
+					"protocol": "https",
+					"host": [
+						"kitechnapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"recipes"
+					]
+				},
+				"description": "##### 📘 Endpoint: `GET /recipes`\n\n---\n\n##### 📝 Description\n\nRetrieves a list of all available recipes from the API. 🍲📋\n\n---\n\n##### 🔗 Request\n\n- Method **:** `GET`\n    \n- URL **:** `https://kitechnapi.onrender.com/recipes`\n    \n\n---\n\n##### 💡 Example Use Case\n\n- Use this endpoint to fetch and display all recipes on a homepage or recipe listing page in your app. 📱👨‍🍳"
+			},
+			"response": [
+				{
+					"name": "All Recipes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://kitechnapi.onrender.com/recipes",
+							"protocol": "https",
+							"host": [
+								"kitechnapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 05 May 2025 13:17:26 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "241"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"25e-TbVyRAFE3CpyBhOeZ8wduZOpU7g\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "0100140a-7ea3-47c5"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "93b0849b8afdc87a-MAA"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Found All Recipes\",\n    \"recipes\": [\n        {\n            \"_id\": \"6817762f91122cea42a8fcd1\",\n            \"recipeID\": \"RCP001\",\n            \"name\": \"Chicken Biriyani\",\n            \"description\": \"A Hot and Spicy Chicken Biriyani\",\n            \"category\": \"Biriyani\",\n            \"ingredients\": [],\n            \"process\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6818b658efd63d2f72f973f5\",\n            \"recipeID\": \"RCP002\",\n            \"name\": \"Mutton Biriyani\",\n            \"description\": \"Hot and Tasty Mutton Biriyani with Egg\",\n            \"category\": \"Biriyani\",\n            \"ingredients\": [],\n            \"process\": [],\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6818b982efd63d2f72f973fe\",\n            \"recipeID\": \"RCP003\",\n            \"name\": \"Chicken Soup\",\n            \"description\": \"A Hot and Spicy Chicken Soup\",\n            \"category\": \"Soup\",\n            \"ingredients\": [],\n            \"process\": [],\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Recipe by RecipeID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kitechnapi.onrender.com/recipes/RCP001",
+					"protocol": "https",
+					"host": [
+						"kitechnapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"recipes",
+						"RCP001"
+					]
+				},
+				"description": "##### 📘 Endpoint: `GET /recipes/:recipeID`\n\n---\n\n##### 📝 Description\n\nFetches a single recipe based on its unique `recipeID`. Useful for viewing detailed information about a specific recipe. 🍛🔍\n\n---\n\n##### 🔗 Request\n\n- Method **:** `GET`\n    \n- URL Format**:** `https://kitechnapi.onrender.com/recipes/:recipeID`\n    \n- Example URL**:** `https://kitechnapi.onrender.com/recipes/RCP001`\n    \n\n---\n\n##### 📥 Parameters\n\n- `:recipeID` (string) – The unique identifier of the recipe you want to retrieve.\n    \n\n---\n\n##### 💡 Example Use Case\n\n- Use this endpoint to fetch single recipe and display all details about recipe on a recipe details page. 📱👨‍🍳"
+			},
+			"response": [
+				{
+					"name": "Single Recipe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://kitechnapi.onrender.com/recipes/RCP001",
+							"protocol": "https",
+							"host": [
+								"kitechnapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"RCP001"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 05 May 2025 13:09:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "170"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"fd-4qhsQDEQAyp//ZeCMGrNVyxA4kQ\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "7630767e-ccc6-435f"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "93b078da2a0b7f99-MAA"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Recipe Found for given RecipeID : RCP001\",\n    \"recipe\": {\n        \"_id\": \"6817762f91122cea42a8fcd1\",\n        \"recipeID\": \"RCP001\",\n        \"name\": \"Chicken Biriyani\",\n        \"description\": \"A Hot and Spicy Chicken Biriyani\",\n        \"category\": \"Biriyani\",\n        \"ingredients\": [],\n        \"process\": [],\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Bew Recipe",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipeID\": \"RCP008\",\r\n    \"name\": \"Tandoori Chicken\",\r\n    \"description\": \"Chicken marinated in yogurt and spices, grilled in a tandoor or oven.\",\r\n    \"category\": \"Non-Veg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kitechnapi.onrender.com/recipes",
+					"protocol": "https",
+					"host": [
+						"kitechnapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"recipes"
+					]
+				},
+				"description": "##### 🆕 Endpoint: `POST /recipes`\n\n---\n\n##### 📝 Description\n\nCreates a new recipe by submitting recipe details to the server. 🍽️✍️\n\n---\n\n##### 🔗 Request\n\n- Method **:** `POST`\n    \n- URL **:** `https://kitechnapi.onrender.com/recipes`\n\n- Content-Type: `application/json`\n    \n\n---\n\n##### 💡 Example Use Case\n\n- Useful for adding new dishes to your recipe database. 📱👨‍🍳"
+			},
+			"response": [
+				{
+					"name": "New Recipe",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipeID\": \"RCP003\",\r\n    \"name\": \"Chicken Soup\",\r\n    \"description\": \"A Hot and Spicy Chicken Soup\",\r\n    \"category\": \"Soup\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://kitechnapi.onrender.com/recipes",
+							"protocol": "https",
+							"host": [
+								"kitechnapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 05 May 2025 13:13:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"e8-3kYXrxOOShDRJuq/wYzkqcBfyvU\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "bb7703d3-2cf0-4445"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "93b07f0f7e3a9d73-MAA"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"New Recipe Created Successfully\",\n    \"recipe\": {\n        \"recipeID\": \"RCP003\",\n        \"name\": \"Chicken Soup\",\n        \"description\": \"A Hot and Spicy Chicken Soup\",\n        \"category\": \"Soup\",\n        \"ingredients\": [],\n        \"process\": [],\n        \"_id\": \"6818b982efd63d2f72f973fe\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Recipe by RecipeID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\":\"Hot and Tasty Mutton Biriyani with Egg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kitechnapi.onrender.com/recipes/RCP006",
+					"protocol": "https",
+					"host": [
+						"kitechnapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"recipes",
+						"RCP006"
+					]
+				},
+				"description": "##### 🔄 Endpoint: `PUT /recipes/:recipeID`\n\n---\n\n##### 📝 Description\n\nUpdates an existing recipe using its unique `recipeID`. 🔧🍛\n\n---\n\n##### 🔗 Request\n\n- Method : `PUT`\n    \n- URL Format: `https://kitechnapi.onrender.com/recipes/:recipeID`\n    \n- Example URL: `https://kitechnapi.onrender.com/recipes/RCP002`\n    \n- Content-Type: `application/json`\n    \n\n---\n\n##### 📥 Parameters\n\n- `:recipeID` (string) – The unique identifier of the recipe you want to retrieve.\n    \n\n---\n\n##### 💡 Example Use Case\n\n- Useful for editing recipe details like ingredients, instructions, or name. 📱👨‍🍳"
+			},
+			"response": [
+				{
+					"name": "Updated Recipe",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Hot and Tasty Mutton Biriyani with Egg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://kitechnapi.onrender.com/recipes/RCP002",
+							"protocol": "https",
+							"host": [
+								"kitechnapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"RCP002"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 05 May 2025 13:15:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "189"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"113-4QmY6D1zFKzCe/WgjPywv2Fjw2E\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "798d056f-0e4f-49b4"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "93b0825a9c56c87a-MAA"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Recipe details Updated for given RecipeID : RCP002\",\n    \"updatedRecipe\": {\n        \"_id\": \"6818b658efd63d2f72f973f5\",\n        \"recipeID\": \"RCP002\",\n        \"name\": \"Mutton Biriyani\",\n        \"description\": \"Hot and Tasty Mutton Biriyani with Egg\",\n        \"category\": \"Biriyani\",\n        \"ingredients\": [],\n        \"process\": [],\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Recipe by RecipID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://kitechnapi.onrender.com/recipes/RCP007",
+					"protocol": "https",
+					"host": [
+						"kitechnapi",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"recipes",
+						"RCP007"
+					]
+				},
+				"description": "##### 🗑️ Endpoint: `DELETE /recipes/:recipeID`\n\n---\n\n##### 📝 Description\n\nDeletes an existing recipe from the database using its unique `recipeID`. ❌🍽️\n\n---\n\n##### 🔗 Request\n\n- Method: `DELETE`\n    \n- URL Format: `https://kitechnapi.onrender.com/recipes/:recipeID`\n    \n- Example URL:`https://kitechnapi.onrender.com/recipes/RCP002`\n    \n\n---\n\n##### 📥 Parameters\n\n- `:recipeID` (string) – The unique identifier of the recipe you want to delete.\n    \n\n---\n\n##### 💡 Example Use Case\n\n- Useful for removing outdated or incorrect recipes.. 📱👨‍🍳"
+			},
+			"response": [
+				{
+					"name": "Deleted Recipe",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://kitechnapi.onrender.com/recipes/RCP003",
+							"protocol": "https",
+							"host": [
+								"kitechnapi",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"recipes",
+								"RCP003"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 05 May 2025 13:18:50 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "172"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"fa-fA2z69tjGN9Lk276xgLZQhCNM0c\""
+						},
+						{
+							"key": "rndr-id",
+							"value": "d4733532-4f62-4542"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-powered-by",
+							"value": "Express"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "Render"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "93b086a8de557f91-MAA"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Recipe Deleted for given RecipeID : RCP003\",\n    \"deletedRecipe\": {\n        \"_id\": \"6818b982efd63d2f72f973fe\",\n        \"recipeID\": \"RCP003\",\n        \"name\": \"Chicken Soup\",\n        \"description\": \"A Hot and Spicy Chicken Soup\",\n        \"category\": \"Soup\",\n        \"ingredients\": [],\n        \"process\": [],\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		}
+	]
+}
