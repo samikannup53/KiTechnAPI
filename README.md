@@ -90,20 +90,52 @@ npm install mongoose
 npm install dotenv
 npm install ejs
 ```
-- express – 🔀 Web Framework for routing and middleware.
-- mongoose – 🍃 ODM for interacting with MongoDB Database.
-- dotenv – 🌱 Load environment variables from .env
-- ejs – 🧩 Template engine for dynamic HTML rendering
+- `express` – 🔀 Web Framework for routing and middleware.
+- `mongoose` – 🍃 ODM for interacting with MongoDB Database.
+- `dotenv` – 🌱 Load environment variables from .env
+- `ejs` – 🧩 Template engine for dynamic HTML rendering
 
 
 ### 🔄 3. Install Dev Dependency
 ```bash
  npm install nodemon
 ```
-- nodemon – ♻️Automatically restarts server on file changes
+- `nodemon` – ♻️Automatically restarts server on file changes
+
+### 🎨 4. Setup Tailwind CSS
+
+#### 📥 Step-1. Install Tailwind CSS
+```bash
+ npm install tailwindcss @tailwindcss/cli
+```
+- `tailwindcss` – 🎨 Utility-first CSS framework for styling.
+- `@tailwindcss/cli` – 🛠️ CLI tool for compiling Tailwind styles.
+
+#### 📄 Step-2. Create and Import Tailwind in Input File
+Inside `config/tailwindConfig.css`, add the following:
+
+```bash
+@import "tailwindcss";
+```
+- 🧩 This file acts as the input source for Tailwind to generate your CSS.
+
+#### 🛠️ Step-3. Update the Build Script in `package.json`
+```bash
+"scripts": {
+    "start": "nodemon main.js",
+    "build": "npx @tailwindcss/cli -i ./config/tailwindConfig.css -o ./public/css/style.css --watch"
+  }
+```
+- 🔄 This script will watch for changes and regenerate `final style.css`.
+
+#### 🧵 Step-4. Run Build Process
+```bash
+  npm run build
+```
+- 🔧 Compiles Tailwind CSS into a single `style.css` inside the `public/css folder`.
 
 
-### 🧩 4. Start the Server
+### 🧩 5. Start the Server
  
 ```bash
   npm start
