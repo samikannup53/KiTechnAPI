@@ -65,7 +65,7 @@ API testing and documentation.
 KiTechnAPI/
 ├── 📂 config/           # ⚙️ Configuration files (e.g., DB connection)
 ├── 📂 controllers/      # 🧠 Controller Functions
-├── 📂 middlewares/      # 🛡️ Custom middleware (e.g., Error Dandling)
+├── 📂 middlewares/      # 🛡️ Custom middleware (e.g., Error Handling)
 ├── 📂 models/           # 🛢️ Mongoose Schemas and Data Models
 ├── 📂 routers/          # 🛣️ Express route Definitions
 ├── 📂 views/            # 🎨 EJS templates for Rendering Views
@@ -140,7 +140,7 @@ Inside `config/tailwindConfig.css`, add the following:
 ```
 - 🔄 This script will watch for changes and regenerate `final style.css`.
 
-#### 🎨 Stap-4. Build Tailwind CSS
+#### 🎨 Step-4. Build Tailwind CSS
 ```bash
   npm run build
 ```
