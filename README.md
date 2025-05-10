@@ -39,6 +39,14 @@ API testing and documentation.
 
 ---
 
+## API Documentation 📬 
+#### Explore the KiTechnAPI endpoints using Postman ⬇️ <br/>
+1. 🛠️ Open Postman.
+2. 📂 Import the `postmanAPI.json` Postman collection from the `docs/` folder.
+3. 🔀 Test the available API endpoints directly from Postman.
+
+---
+
 ## Project Structure 🗂️
 
 ```bash
@@ -49,10 +57,15 @@ KiTechnAPI/
 ├── 📂 models/           # 🛢️ Mongoose Schemas and Data Models
 ├── 📂 routers/          # 🛣️ Express route Definitions
 ├── 📂 views/            # 🎨 EJS templates for Rendering Views
+├── 📂 public/           # 🌐 Public assets (e.g., CSS, images)
+│   ├── 📂 css/          # 🎨 Compiled CSS and Tailwind files
+│   └── 📂 images/       # 🖼️ Static image assets
+├── 📂 docs/             # 📚 Postman collection and documentation
 ├── 📄 app.js            # 🚀 Additional Application Logic
 ├── 📄 main.js           # 🧩 Main application entry point & server setup
 ├── 📄 package.json      # 📦 Project Dependencies
 ├── 📄 package-lock.json # 🔒 Exact versions of Installed Dependencies
+├── 📄 README.md         # 📝 Project Overview and Setup Instructions
 ├── 📄 .gitignore        # 🚫 Specifies Files and Directories to Ignore in Git
 └── 📄 .env              # 🌱 Environment Variables (e.g., DB URL, PORT, Secrets)
 
