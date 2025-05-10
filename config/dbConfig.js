@@ -1,5 +1,7 @@
+// MongoDB Connection Configuration
 const mongoose = require("mongoose");
 
+// Function to Create Connection with MongoDB
 async function connectDB() {
   try {
     await mongoose.connect(process.env.MONGODB_ATLAS_URL);
@@ -9,4 +11,5 @@ async function connectDB() {
   }
 }
 
+// Exporting MongoDB Connection Function
 module.exports = connectDB;

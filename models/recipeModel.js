@@ -1,6 +1,7 @@
+// Importing Mongoose ORM
 const mongoose = require("mongoose");
 
-// Schema for Recipe
+// Schema for Recipe Model
 const recipeSchema = new mongoose.Schema({
   recipeID: { type: String, required: true, unique: true },
   name: { type: String, required: true },
@@ -15,4 +16,5 @@ const recipeSchema = new mongoose.Schema({
 // Model Creation
 const Recipe = mongoose.model("Recipe", recipeSchema);
 
+// Model Export
 module.exports = Recipe;

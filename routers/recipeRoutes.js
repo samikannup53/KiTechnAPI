@@ -11,7 +11,7 @@ const {
 
 const router = express.Router();
 
-// Routers & Handller Functions
+// Register Routers with Handller Functions
 router.post("/", handleCreateRecipe);
 router.get("/", handleGetAllRecipes);
 router.get("/:recipeID", handleGetRecipeByRecibeID);
