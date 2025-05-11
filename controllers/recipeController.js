@@ -15,7 +15,11 @@ async function handleGetAllRecipes(req, res) {
   try {
     const recipes = await Recipe.find();
     if (recipes.length !== 0) {
-      res.json({ message: "Found All Recipes", recipes });
+      res.json({
+        message: "Found All Recipes",
+        totalRecipesFound: recipes.length,
+        recipes,
+      });
     } else {
       res.json({ message: "No Recipes Found" });
     }
