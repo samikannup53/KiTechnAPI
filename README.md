@@ -33,9 +33,29 @@ API testing and documentation.
 
 ---
 
+## API Endpoints 📮
+
+| Method | Endpoint             | Description         | Request Body   | Response             |
+| ------ | ------------------   | ------------------- | ------------   | ------------------   |
+| GET    | `/recipes`           | Get all recipes     | ❌             | ✅ List of recipes  |
+| GET    | `/recipes/:id`       | Get recipe by ID    | ❌             | ✅ Single recipe    |
+| POST   | `/recipes`           | Create a new recipe | ✅ JSON data   | ✅ Created recipe   |
+| PUT    | `/recipes/:recipeID` | Update recipe by ID | ✅ JSON data   | ✅ Updated recipe   |
+| DELETE | `/recipes/:recipeID` | Delete recipe by ID | ❌             | ✅ Deletion message |
+
+---
+
 ## Deployed App 🚀 
 #### For Live Demo Click the Below Link ⬇️ <br/>
 🌐 Live URL : https://kitechnapi.onrender.com/ 
+
+---
+
+## API Documentation 📬 
+#### Explore the KiTechnAPI endpoints using Postman ⬇️ <br/>
+1. 🛠️ Open Postman.
+2. 📂 Import the `postmanAPI.json` Postman collection from the `docs/` folder.
+3. 🔀 Test the available API endpoints directly from Postman.
 
 ---
 
@@ -45,14 +65,19 @@ API testing and documentation.
 KiTechnAPI/
 ├── 📂 config/           # ⚙️ Configuration files (e.g., DB connection)
 ├── 📂 controllers/      # 🧠 Controller Functions
-├── 📂 middlewares/      # 🛡️ Custom middleware (e.g., Error Dandling)
+├── 📂 middlewares/      # 🛡️ Custom middleware (e.g., Error Handling)
 ├── 📂 models/           # 🛢️ Mongoose Schemas and Data Models
 ├── 📂 routers/          # 🛣️ Express route Definitions
 ├── 📂 views/            # 🎨 EJS templates for Rendering Views
+├── 📂 public/           # 🌐 Public assets (e.g., CSS, images)
+│   ├── 📂 css/          # 🎨 Compiled CSS and Tailwind files
+│   └── 📂 images/       # 🖼️ Static image assets
+├── 📂 docs/             # 📚 Postman collection and documentation
 ├── 📄 app.js            # 🚀 Additional Application Logic
 ├── 📄 main.js           # 🧩 Main application entry point & server setup
 ├── 📄 package.json      # 📦 Project Dependencies
 ├── 📄 package-lock.json # 🔒 Exact versions of Installed Dependencies
+├── 📄 README.md         # 📝 Project Overview and Setup Instructions
 ├── 📄 .gitignore        # 🚫 Specifies Files and Directories to Ignore in Git
 └── 📄 .env              # 🌱 Environment Variables (e.g., DB URL, PORT, Secrets)
 
@@ -77,20 +102,52 @@ npm install mongoose
 npm install dotenv
 npm install ejs
 ```
-- express – 🔀 Web Framework for routing and middleware.
-- mongoose – 🍃 ODM for interacting with MongoDB Database.
-- dotenv – 🌱 Load environment variables from .env
-- ejs – 🧩 Template engine for dynamic HTML rendering
+- `express` – 🔀 Web Framework for routing and middleware.
+- `mongoose` – 🍃 ODM for interacting with MongoDB Database.
+- `dotenv` – 🌱 Load environment variables from .env
+- `ejs` – 🧩 Template engine for dynamic HTML rendering
 
 
 ### 🔄 3. Install Dev Dependency
 ```bash
  npm install nodemon
 ```
-- nodemon – ♻️Automatically restarts server on file changes
+- `nodemon` – ♻️Automatically restarts server on file changes
+
+### 🎨 4. Setup Tailwind CSS
+
+#### 📥 Step-1. Install Tailwind CSS
+```bash
+ npm install tailwindcss @tailwindcss/cli
+```
+- `tailwindcss` – 🎨 Utility-first CSS framework for styling.
+- `@tailwindcss/cli` – 🛠️ CLI tool for compiling Tailwind styles.
+
+#### 📄 Step-2. Create and Import Tailwind in Input File
+Inside `config/tailwindConfig.css`, add the following:
+
+```bash
+@import "tailwindcss";
+```
+- 🧩 This file acts as the input source for Tailwind to generate final CSS.
+
+#### 🛠️ Step-3. Update the Build Script in `package.json`
+```bash
+"scripts": {
+    "start": "nodemon main.js",
+    "build": "npx @tailwindcss/cli -i ./config/tailwindConfig.css -o ./public/css/style.css --watch"
+  }
+```
+- 🔄 This script will watch for changes and regenerate final `style.css`.
+
+#### 🎨 Step-4. Build Tailwind CSS
+```bash
+  npm run build
+```
+- 🔧 Compiles Tailwind CSS into a single `style.css` inside the `public/css folder`.
 
 
-### 🧩 4. Start the Server
+### 🧩 5. Start the Server
  
 ```bash
   npm start
@@ -101,7 +158,7 @@ npm install ejs
 
 ## Getting Started 🚀
 
-### 📋 1. Prerequisites
+### 📋 1. Requirments
 - ✅ Node.js Installed
 - ✅ MongoDB installed (Local or Cloud - MongoDB Atlas)
 
@@ -130,25 +187,18 @@ Create a `.env` file in the root directory with the following content:
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/kiTechnAPI (Your MongoDB URL)
 ```
+### 🎨 4. Build Tailwind CSS
+```bash
+  npm run build
+```
+- 🧵 Compiles Tailwind styles into `public/css/style.css`. Run this after installing dependencies.
 
-### ▶️ 4. Run the Application
+### ▶️ 5. Run the Application
 
 ```bash
 npm start
 ```
 🌐 The server will start at: http://localhost:3000
-
----
-
-## API Endpoints 📮
-
-| Method | Endpoint             | Description         | Request Body   | Response             |
-| ------ | ------------------   | ------------------- | ------------   | ------------------   |
-| GET    | `/recipes`           | Get all recipes     | ❌             | ✅ List of recipes  |
-| GET    | `/recipes/:id`       | Get recipe by ID    | ❌             | ✅ Single recipe    |
-| POST   | `/recipes`           | Create a new recipe | ✅ JSON data   | ✅ Created recipe   |
-| PUT    | `/recipes/:recipeID` | Update recipe by ID | ✅ JSON data   | ✅ Updated recipe   |
-| DELETE | `/recipes/:recipeID` | Delete recipe by ID | ❌             | ✅ Deletion message |
 
 ---
 
