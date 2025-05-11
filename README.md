@@ -129,7 +129,7 @@ Inside `config/tailwindConfig.css`, add the following:
 ```bash
 @import "tailwindcss";
 ```
-- 🧩 This file acts as the input source for Tailwind to generate your CSS.
+- 🧩 This file acts as the input source for Tailwind to generate final CSS.
 
 #### 🛠️ Step-3. Update the Build Script in `package.json`
 ```bash
@@ -138,7 +138,7 @@ Inside `config/tailwindConfig.css`, add the following:
     "build": "npx @tailwindcss/cli -i ./config/tailwindConfig.css -o ./public/css/style.css --watch"
   }
 ```
-- 🔄 This script will watch for changes and regenerate `final style.css`.
+- 🔄 This script will watch for changes and regenerate final `style.css`.
 
 #### 🎨 Step-4. Build Tailwind CSS
 ```bash
